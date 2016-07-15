@@ -1,8 +1,8 @@
-import path from 'path';
+let path = require('path');
 
-const node_modules_dir = path.resolve(__dirname, 'node_modules');
+let node_modules_dir = path.resolve(__dirname, 'node_modules');
 
-export default {
+module.exports = {
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),

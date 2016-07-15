@@ -1,7 +1,7 @@
-import webpack from 'webpack';
-import path from 'path';
+let webpack = require ('webpack');
+let path = require('path');
 
-export default {
+module.exports =  {
   entry: [
     'webpack-dev-server/client?http://localhost:8080',
     'webpack/hot/only-dev-server',
