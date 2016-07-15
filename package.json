@@ -1,0 +1,28 @@
+{
+  "name": "react-redux-starter",
+  "version": "0.0.1",
+  "description": "Get started with React, Redux using Babel and Webpack",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "webpack-dev-server --progress --colors --hot",
+    "build": "NODE_ENV=production webpack -p --config webpack.production.config.js",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shidil/react-redux-starter.git"
+  },
+  "keywords": [
+    "react",
+    "redux",
+    "starter",
+    "webpack",
+    "babel"
+  ],
+  "author": "Shidil",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Shidil/react-redux-starter/issues"
+  },
+  "homepage": "https://github.com/Shidil/react-redux-starter/issues#readme"
+}
