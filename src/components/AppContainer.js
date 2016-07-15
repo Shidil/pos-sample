@@ -10,7 +10,7 @@ class AppContainer extends React.Component {
   render() {
     return (
       <div className="main-view">
-        <h1> Hello World </h1>
+        <h1>Hello World</h1>
       </div>
     );
   }
