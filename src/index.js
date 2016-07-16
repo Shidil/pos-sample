@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Router from './routes';
+import RouterContainer from './routes';
 import createBrowserHistory from 'history/lib/createBrowserHistory';
 import { useRouterHistory } from 'react-router';
 
@@ -11,7 +11,7 @@ const history = useRouterHistory(createBrowserHistory)({
 
 let render = () => {
   ReactDOM.render(
-    <Router history={history}/>,
+    <RouterContainer history={history}/>,
     MOUNT_NODE
   );
 };
