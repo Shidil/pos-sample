@@ -12,7 +12,7 @@ class AppContainer extends React.Component {
 }
 
 AppContainer.propTypes = {
-  children: React.PropTypes.object
+  children: React.PropTypes.element.isRequired
 };
 
 export default AppContainer;
