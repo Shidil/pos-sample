@@ -45,6 +45,7 @@
     "eslint-loader": "1.4.1",
     "eslint-plugin-react": "5.2.2",
     "fbjs": "0.8.3",
+    "file-loader": "0.9.0",
     "history": "2.0.0",
     "jest-cli": "13.2.3",
     "less": "2.7.1",
@@ -59,6 +60,7 @@
     "react-tools": "0.13.3",
     "style": "0.0.3",
     "style-loader": "0.13.1",
+    "url-loader": "0.5.7",
     "webpack": "1.13.1",
     "webpack-dev-server": "1.14.1"
   }
