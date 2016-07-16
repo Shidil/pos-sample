@@ -36,5 +36,8 @@ module.exports =  {
         loaders: ['react-hot', 'babel']
       }
     ]
+  },
+  devServer: {
+    historyApiFallback: true
   }
 }

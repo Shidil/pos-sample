@@ -9,7 +9,9 @@
     "test": "jest"
   },
   "jest": {
-    "unmockedModulePathPatterns": ["./node_modules/react"]
+    "unmockedModulePathPatterns": [
+      "./node_modules/react"
+    ]
   },
   "repository": {
     "type": "git",
@@ -42,6 +44,7 @@
     "eslint-loader": "1.4.1",
     "eslint-plugin-react": "5.2.2",
     "fbjs": "0.8.3",
+    "history": "2.0.0",
     "jest-cli": "13.2.3",
     "less": "2.7.1",
     "less-loader": "2.2.3",

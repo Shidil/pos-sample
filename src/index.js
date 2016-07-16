@@ -1,12 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import AppContainer from './components/AppContainer';
+import Router from './routes';
+import createBrowserHistory from 'history/lib/createBrowserHistory';
+import { useRouterHistory } from 'react-router';
 
 const MOUNT_NODE = document.getElementById('root');
+const history = useRouterHistory(createBrowserHistory)({
+  basename: ''
+});
 
 let render = () => {
   ReactDOM.render(
-    <AppContainer/>,
+    <Router history={history}/>,
     MOUNT_NODE
   );
 };

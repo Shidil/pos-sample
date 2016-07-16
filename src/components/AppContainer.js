@@ -10,10 +10,14 @@ class AppContainer extends React.Component {
   render() {
     return (
       <div className="main-view">
-        <h1>Hello World</h1>
+        {this.props.children}
       </div>
     );
   }
 }
+
+AppContainer.propTypes = {
+  children: React.PropTypes.object
+};
 
 export default AppContainer;
