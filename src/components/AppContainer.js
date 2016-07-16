@@ -1,12 +1,7 @@
 import React from 'react';
+import styles from './AppContainer.less'; // eslint-disable-line no-unused-vars
 
 class AppContainer extends React.Component {
-  constructor(props, context) {
-    super(props);
-    this.props = props;
-    this.context = context;
-  }
-
   render() {
     return (
       <div className="main-view">
