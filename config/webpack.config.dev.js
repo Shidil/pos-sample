@@ -3,6 +3,8 @@ const webpack = require('webpack');
 const config = require('./webpack.config');
 const path = require('path');
 
+const DashboardPlugin = require('webpack-dashboard/plugin');
+
 const GLOBALS = {
   'process.env': {
     NODE_ENV: JSON.stringify('development')
@@ -26,7 +28,8 @@ module.exports = merge(config, {
 
     new webpack.NoEmitOnErrorsPlugin(),
     // do not emit compiled assets that include errors
-    new webpack.DefinePlugin(GLOBALS)
+    new webpack.DefinePlugin(GLOBALS),
+    new DashboardPlugin()
   ],
   module: {
     loaders: [
