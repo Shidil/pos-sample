@@ -1,6 +1,8 @@
 let webpack = require('webpack');
 let path = require('path');
 
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 module.exports = {
   output: {
     path: path.resolve(__dirname, '../dist'),
@@ -25,6 +27,12 @@ module.exports = {
       name: 'vendor',
       filename: 'js/vendor.bundle.js',
       minChunks: Infinity
+    }),
+
+    new HtmlWebpackPlugin({
+      title: 'React Redux Starter',
+      filename: 'index.html',
+      template: 'src/index.html'
     })
   ],
 

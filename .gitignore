@@ -4,6 +4,7 @@ npm-debug.log
 
 # app
 bundle.js
+dist
 
 # osx
 .DS_Store
