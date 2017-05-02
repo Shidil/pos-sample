@@ -14,14 +14,18 @@ module.exports = merge(config, {
   devtool: 'cheap-module-eval-source-map',
   entry: {
     application: [
-      'webpack-hot-middleware/client',
       'react-hot-loader/patch',
+      'webpack/hot/only-dev-server',
+      'webpack-dev-server/client?http://localhost:3000',
       './src/index'
     ],
     vendor: ['react', 'react-dom', 'react-redux', 'react-router', 'react-router-redux', 'redux']
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
+
+    new webpack.NoEmitOnErrorsPlugin(),
+    // do not emit compiled assets that include errors
     new webpack.DefinePlugin(GLOBALS)
   ],
   module: {
@@ -49,7 +53,8 @@ module.exports = merge(config, {
 
   devServer: {
     historyApiFallback: true,
-    port: 8080,
-    host: 'localhost'
+    host: 'localhost',
+    port: 3000,
+    hot: true
   }
 });
