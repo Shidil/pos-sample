@@ -6,6 +6,7 @@ import AppContainer from './components/AppContainer/';
 import Home from './components/Home/';
 import About from './components/About/';
 import NotFound from './components/NotFound/';
+import DevTools from './store/DevTools';
 
 const routes = {
   path: '/',
@@ -30,7 +31,10 @@ class RouterContainer extends React.Component {
   render() {
     return (
       <Provider store={this.props.store}>
-        <Router history={this.props.history} routes={routes} />
+        <div>
+          <Router history={this.props.history} routes={routes} />
+          {!window.devToolsExtension ? <DevTools /> : null}
+        </div>
       </Provider>
     );
   }
