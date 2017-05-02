@@ -4,7 +4,7 @@
   "description": "Get started with React, Redux using Babel and Webpack",
   "main": "src/index.js",
   "scripts": {
-    "start": "webpack-dev-server --config ./config/webpack.config.dev.js --progress --colors --hot",
+    "start": "webpack-dev-server --config ./config/webpack.config.dev.js --progress --colors",
     "build": "NODE_ENV=production webpack -p --config webpack.production.config.js"
   },
   "repository": {
