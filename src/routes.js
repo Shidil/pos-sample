@@ -1,5 +1,7 @@
 import React from 'react';
+import { Provider } from 'react-redux';
 import { Router } from 'react-router';
+
 import AppContainer from './components/AppContainer';
 import HomeComponent from './components/HomeComponent';
 import AboutComponent from './components/AboutComponent';
@@ -27,13 +29,16 @@ const routes = {
 class RouterContainer extends React.Component {
   render() {
     return (
-       <Router history={this.props.history} routes={routes}/>
+      <Provider store={this.props.store}>
+        <Router history={this.props.history} routes={routes} />
+      </Provider>
     );
   }
 }
 
 RouterContainer.propTypes = {
-  history: React.PropTypes.object.isRequired
+  history: React.PropTypes.object.isRequired,
+  store: React.PropTypes.object.isRequired
 };
 
 export default RouterContainer;

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, IndexLink } from 'react-router';
+import PropTypes from 'prop-types';
 import styles from './AppContainer.less'; // eslint-disable-line no-unused-vars
 
 class AppContainer extends React.Component {
@@ -22,7 +23,7 @@ class AppContainer extends React.Component {
 }
 
 AppContainer.propTypes = {
-  children: React.PropTypes.element.isRequired
+  children: PropTypes.element.isRequired
 };
 
 export default AppContainer;

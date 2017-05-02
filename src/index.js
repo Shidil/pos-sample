@@ -1,28 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import createBrowserHistory from 'history/lib/createBrowserHistory';
-import { useRouterHistory } from 'react-router';
-import {createStore} from 'redux';
-import {Provider} from 'react-redux';
+import { browserHistory } from 'react-router';
+import { syncHistoryWithStore } from 'react-router-redux';
+
+import Redbox from 'redbox-react';
+import { AppContainer } from 'react-hot-loader';
+
 import RouterContainer from './routes';
 import styles from './styles/base.less'; // eslint-disable-line no-unused-vars
-import reducer from './redux/reducer';
 
+import configureStore from './store';
 const MOUNT_NODE = document.getElementById('root');
 
-// setup custom history
-const history = useRouterHistory(createBrowserHistory)({
-  basename: ''
-});
-
 // setup redux
-const store = createStore(reducer);
+const store = configureStore();
+const history = syncHistoryWithStore(browserHistory, store);
 
 let render = () => {
   ReactDOM.render(
-    <Provider store={store}>
-      <RouterContainer history={history}/>
-    </Provider>,
+    <AppContainer errorReporter={Redbox}>
+      <RouterContainer store={store} history={history}/>
+    </AppContainer>,
     MOUNT_NODE
   );
 };
