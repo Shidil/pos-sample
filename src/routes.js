@@ -2,26 +2,26 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { Router } from 'react-router';
 
-import AppContainer from './components/AppContainer';
-import HomeComponent from './components/HomeComponent';
-import AboutComponent from './components/AboutComponent';
-import NoMatchComponent from './components/NoMatchComponent';
+import AppContainer from './components/AppContainer/';
+import Home from './components/Home/';
+import About from './components/About/';
+import NotFound from './components/NotFound/';
 
 const routes = {
   path: '/',
   component: AppContainer,
   indexRoute: {
     name: 'index',
-    component: HomeComponent
+    component: Home
   },
   childRoutes: [
     {
       path: '/about',
-      component: AboutComponent
+      component: About
     },
     {
       path: '*',
-      component: NoMatchComponent
+      component: NotFound
     }
   ]
 };

@@ -1,9 +1,7 @@
 import React from 'react';
-import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
-import * as actionCreators from '../redux/action_creators';
 
-export class Counter extends React.Component {
+class CounterComponent extends React.Component {
   render() {
     return (
       <div>
@@ -16,20 +14,11 @@ export class Counter extends React.Component {
   }
 }
 
-Counter.propTypes = {
+CounterComponent.propTypes = {
   value: PropTypes.number.isRequired,
   increment: PropTypes.func,
   decrement: PropTypes.func
 
 };
 
-let mapStateToProps = (state) => {
-  return {
-    value: state.app.counter
-  };
-};
-
-export const CounterContainer = connect(
-  mapStateToProps,
-  actionCreators
-)(Counter);
+export default CounterComponent;

@@ -1,9 +1,9 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import { persistState } from 'redux-devtools';
 import promiseMiddleware from 'redux-promise';
-import { createLogger}  from 'redux-logger';
+import { createLogger} from 'redux-logger';
 import rootReducer from './reducer';
-import DevTools from './DevTool';
+import DevTools from './DevTools';
 import ReduxImmutable from 'redux-immutable-state-invariant';
 
 /**
