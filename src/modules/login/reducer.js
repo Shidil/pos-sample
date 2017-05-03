@@ -2,7 +2,7 @@
 let getInitialState = () => {
   return {
     loggedIn: false,
-    redirectUrl: '/counter',
+    redirectUrl: '/sell',
     user: null,
     sessionID: null
   };

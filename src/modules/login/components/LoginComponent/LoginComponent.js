@@ -27,7 +27,7 @@ class LoginComponent extends React.Component {
             <div className="form-group">
               <input type="text"
                 className="input-flat form-control"
-                id="usr" placeholder="Email" ref="username" />
+                id="usr" placeholder="Username" ref="username" />
             </div>
             <div className="form-group">
               <input type="password"

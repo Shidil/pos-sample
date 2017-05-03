@@ -5,7 +5,7 @@ import { Router, Route, IndexRoute } from 'react-router';
 import AppContainer from './components/AppContainer/';
 import AuthGuard from './components/AuthGuard/';
 import LoginContainer from './modules/login/login';
-import CounterContainer from './modules/counter/counter';
+import SalesContainer from './modules/sales';
 import NotFound from './components/NotFound/';
 import DevTools from './store/DevTools';
 
@@ -14,7 +14,7 @@ const routes = (
     <IndexRoute component={LoginContainer} />
     <Route path="login" component={LoginContainer} />
     <Route component={AuthGuard}>
-      <Route path="counter" component={CounterContainer} />
+      <Route path="sell" component={SalesContainer} />
     </Route>
     <Route path="*" component={NotFound} />
   </Route>
