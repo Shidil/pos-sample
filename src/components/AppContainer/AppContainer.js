@@ -21,7 +21,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="container container-fluid">
+      <div className="">
         {this.props.children}
       </div>
     );

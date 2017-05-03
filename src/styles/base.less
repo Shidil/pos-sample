@@ -1,6 +1,9 @@
 @import '../../node_modules/normalize.css/normalize.css';
-@import '../../node_modules/bootstrap/less/bootstrap.less';
 @import './fonts/open-sans.less';
+
+* {
+  box-sizing: border-box;
+}
 
 html {
   font-size: 100%;
@@ -8,7 +11,8 @@ html {
 
 body {
   font-size: 1em;
-  font-family: 'Open Sans', sans-seri
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
 }
 
 .centered-xy {
@@ -16,4 +20,20 @@ body {
   left: 50%;
   top: 50%;
   transform: translate(-50%,-50%);
+}
+
+.btn {
+  height: 50px;
+  padding: 5px;
+  text-align: center;
+  border: none;
+}
+
+.btn-success {
+  background: green;
+  color: white;
+}
+
+.btn-wide {
+  width: 100%;
 }

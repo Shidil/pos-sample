@@ -20,25 +20,28 @@ class LoginComponent extends React.Component {
 
   render() {
     return (
-      <div className="centered-xy login-container">
-        <div className="text-center" >
-          <div className="form-group">
-            <input type="text"
+      <div id="login">
+        <div className="centered-xy login-container">
+          <div className="logo" />
+          <div className="text-center" >
+            <div className="form-group">
+              <input type="text"
+                className="input-flat form-control"
+                id="usr" placeholder="Email" ref="username" />
+            </div>
+            <div className="form-group">
+              <input type="password"
               className="form-control input-flat"
-              id="usr" placeholder="Email" ref="username" />
-          </div>
-          <div className="form-group">
-            <input type="password"
-            className="form-control input-flat"
-            id="pwd" placeholder="Password" ref="password" />
-          </div>
-          <div className="error-message">
-            {this.props.errorMessage}
-          </div>
-          <div className="form-group">
-            <input type="button"
-            className="btn btn-primary btn-flat btn-block"
-            value="Login" onClick={this.loginUser} />
+              id="pwd" placeholder="Password" ref="password" />
+            </div>
+            <div className="error-message">
+              {this.props.errorMessage}
+            </div>
+            <div className="form-group">
+              <input type="button"
+              className="btn btn-success btn-wide"
+              value="Login" onClick={this.loginUser} />
+            </div>
           </div>
         </div>
       </div>
