@@ -11,6 +11,14 @@ class LoginComponent extends React.Component {
     this.loginUser = this.loginUser.bind(this);
   }
 
+  componentDidMount() {
+    const { isLoggedIn, actions } = this.props;
+
+    if (isLoggedIn) {
+      actions.logoutUser();
+    }
+  }
+
   loginUser() {
     const username = this.refs.username.value;
     const password = this.refs.password.value;

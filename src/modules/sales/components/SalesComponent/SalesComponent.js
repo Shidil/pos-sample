@@ -8,7 +8,7 @@ class SalesComponent extends React.Component {
       <div>
         {
           this.props.products.map(product => (
-            <ProductComponent data={product} />
+            <ProductComponent data={product} key={product.id} />
           ))
         }
       </div>

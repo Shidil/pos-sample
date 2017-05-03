@@ -26,6 +26,13 @@ export default (state = getInitialState(), action) => {
       user: action.username
     };
 
+  case 'LOGOUT_USER':
+    return {
+      ...state,
+      loggedIn: false,
+      user: null
+    };
+
   default:
     return state;
   }

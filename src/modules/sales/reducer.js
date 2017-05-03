@@ -2,9 +2,9 @@
 let getInitialState = () => {
   return {
     products: [{
-      title: 'Chicken Biriyani'
+      title: 'Chicken Biriyani', id: 1
     }, {
-      title: 'Beef Biriyani'
+      title: 'Beef Biriyani', id: 2
     }],
     orders: [],
     cash: 0

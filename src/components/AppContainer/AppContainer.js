@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 import * as actionCreators from './actions';
+import Navbar from '../Navbar';
 import styles from './AppContainer.less'; // eslint-disable-line no-unused-vars
 
 class App extends React.Component {
@@ -22,7 +23,10 @@ class App extends React.Component {
   render() {
     return (
       <div className="">
-        {this.props.children}
+        <Navbar />
+        <div className="content">
+          {this.props.children}
+        </div>
       </div>
     );
   }
