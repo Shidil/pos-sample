@@ -18,7 +18,7 @@ module.exports = merge(config, {
     application: [
       'react-hot-loader/patch',
       'webpack/hot/only-dev-server',
-      'webpack-dev-server/client?http://localhost:3000',
+      'webpack-dev-server/client?http://localhost:4000',
       './src/index'
     ],
     vendor: ['react', 'react-dom', 'react-redux', 'react-router', 'react-router-redux', 'redux']
@@ -57,7 +57,7 @@ module.exports = merge(config, {
   devServer: {
     historyApiFallback: true,
     host: 'localhost',
-    port: 3000,
+    port: 4000,
     hot: true
   }
 });

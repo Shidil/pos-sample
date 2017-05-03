@@ -4050,6 +4050,10 @@ normalize.css@*:
   version "6.0.0"
   resolved "https://registry.yarnpkg.com/normalize.css/-/normalize.css-6.0.0.tgz#22188c2707c911fb3ad3c1aac0677ff68661bea8"
 
+normalize.css@^7.0.0:
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/normalize.css/-/normalize.css-7.0.0.tgz#abfb1dd82470674e0322b53ceb1aaf412938e4bf"
+
 normalize.less@1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/normalize.less/-/normalize.less-1.0.0.tgz#17364dba8a38c89f3c75cf788ad95907eacaa8fc"
