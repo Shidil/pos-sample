@@ -26,11 +26,16 @@ body {
   padding: 5px;
   text-align: center;
   border: none;
+  cursor: pointer;
 }
 
 .btn-success {
   background: #43a047;
   color: white;
+
+  &:hover {
+    background: saturate(#43a047, 10%)
+  }
 }
 
 .btn-wide {
