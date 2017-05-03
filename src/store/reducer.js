@@ -1,9 +1,11 @@
 import { combineReducers } from 'redux';
 import { routerReducer as routing } from 'react-router-redux';
 
-import Counter from '../counter/reducer';
+import CounterReducer from '../counter/reducer';
+import LoginReducer from '../login/reducer';
 
 export default combineReducers({
   routing,
-  counter: Counter
+  counter: CounterReducer,
+  session: LoginReducer
 });

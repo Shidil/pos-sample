@@ -1,38 +1,33 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { Router } from 'react-router';
+import { Router, Route, IndexRoute } from 'react-router';
 
 import AppContainer from './components/AppContainer/';
 import Home from './components/Home/';
-import About from './components/About/';
+import AuthGuard from './components/AuthGuard/';
+import LoginContainer from './login/login';
 import NotFound from './components/NotFound/';
 import DevTools from './store/DevTools';
 
-const routes = {
-  path: '/',
-  component: AppContainer,
-  indexRoute: {
-    name: 'index',
-    component: Home
-  },
-  childRoutes: [
-    {
-      path: '/about',
-      component: About
-    },
-    {
-      path: '*',
-      component: NotFound
-    }
-  ]
-};
+const routes = (
+  <Route path="/" component={AppContainer}>
+    <IndexRoute component={LoginContainer} />
+    <Route path="login" component={LoginContainer} />
+    <Route component={AuthGuard}>
+      <Route path="counter" component={Home} />
+    </Route>
+    <Route path="*" component={NotFound} />
+  </Route>
+);
 
 class RouterContainer extends React.Component {
   render() {
     return (
       <Provider store={this.props.store}>
         <div>
-          <Router history={this.props.history} routes={routes} />
+          <Router history={this.props.history}>
+            {routes}
+          </Router>
           {!window.devToolsExtension ? <DevTools /> : null}
         </div>
       </Provider>
