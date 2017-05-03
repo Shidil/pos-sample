@@ -2,7 +2,7 @@
 let getInitialState = () => {
   return {
     loggedIn: false,
-    redirectUrl: null,
+    redirectUrl: '/counter',
     user: null,
     sessionID: null
   };
@@ -17,6 +17,13 @@ export default (state = getInitialState(), action) => {
     return {
       ...state,
       redirectUrl: action.url
+    };
+
+  case 'LOGIN_USER':
+    return {
+      ...state,
+      loggedIn: true,
+      user: action.username
     };
 
   default:

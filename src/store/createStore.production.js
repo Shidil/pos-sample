@@ -1,10 +1,10 @@
 import { createStore, applyMiddleware, compose } from 'redux';
-import promiseMiddleware from 'redux-promise';
+import { apiMiddleware } from 'redux-api-middleware';
 
 import rootReducer from './reducer';
 
 const enhancer = compose(
-  applyMiddleware(promiseMiddleware)
+  applyMiddleware(apiMiddleware)
 )(createStore);
 
 export default function configureStore(initialState) {

@@ -1,4 +1,5 @@
 import {connect} from 'react-redux';
+import { bindActionCreators } from 'redux';
 import * as actionCreators from './actions';
 import LoginComponent from './components/LoginComponent';
 
@@ -8,9 +9,13 @@ let mapStateToProps = (state) => {
   };
 };
 
+const mapDispatchToProps = dispatch => ({
+  actions: bindActionCreators(actionCreators, dispatch)
+});
+
 const LoginContainer = connect(
   mapStateToProps,
-  actionCreators
+  mapDispatchToProps
 )(LoginComponent);
 
 export default LoginContainer;
