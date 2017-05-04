@@ -5,7 +5,8 @@ import SalesComponent from './components/SalesComponent';
 
 let mapStateToProps = (state) => {
   return {
-    products: state.sales.products
+    products: state.sales.products,
+    cart: state.sales.cart
   };
 };
 

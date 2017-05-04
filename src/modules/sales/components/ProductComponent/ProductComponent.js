@@ -13,7 +13,8 @@ class ProductComponent extends React.Component {
 }
 
 ProductComponent.propTypes = {
-  data: PropTypes.object.isRequired
+  data: PropTypes.object.isRequired,
+  addToCart: PropTypes.func.isRequired
 };
 
 export default ProductComponent;
