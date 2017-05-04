@@ -13,6 +13,19 @@ export const resetCart = () => ({
   type: 'RESET_CART'
 });
 
+export const changeSalesNote = (e) => ({
+  type: 'CHANGE_SALES_NOTE',
+  note: e.target.value
+});
+
+export const postOrder = () => ({
+  type: 'POST_ORDER'
+});
+
+export const parkOrder = () => ({
+  type: 'PARK_ORDER'
+});
+
 export const fetchProducts = () => ({
   type: 'FETCH_PRODUCTS_SUCCESS',
   products: [{
