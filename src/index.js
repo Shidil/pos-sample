@@ -7,7 +7,6 @@ import Redbox from 'redbox-react';
 import { AppContainer } from 'react-hot-loader';
 
 import RouterContainer from './routes';
-import styles from './styles/base.less'; // eslint-disable-line no-unused-vars
 
 import configureStore from './store/createStore';
 const MOUNT_NODE = document.getElementById('root');

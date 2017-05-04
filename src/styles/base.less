@@ -1,4 +1,5 @@
 @import '../../node_modules/normalize.css/normalize.css';
+@import '../../node_modules/bootstrap/less/bootstrap.less';
 @import '../../node_modules/font-awesome/less/font-awesome.less';
 @import './fonts/open-sans.less';
 
@@ -18,6 +19,10 @@ body {
   color: #333;
 }
 
+a, a:hover {
+  text-decoration: none;;
+}
+
 .centered-xy {
   position: absolute;
   left: 50%;
@@ -28,9 +33,8 @@ body {
 .btn {
   height: 50px;
   padding: 5px;
-  text-align: center;
   border: none;
-  cursor: pointer;
+  border-radius: 0;
 }
 
 .btn-success {

@@ -19,6 +19,7 @@ module.exports = merge(config, {
       'react-hot-loader/patch',
       'webpack/hot/only-dev-server',
       'webpack-dev-server/client?http://localhost:4000',
+      './src/styles/base.less',
       './src/index'
     ],
     vendor: ['react', 'react-dom', 'react-redux', 'react-router', 'react-router-redux', 'redux']
