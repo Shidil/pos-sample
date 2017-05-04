@@ -2,11 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ProductComponent from '../ProductComponent';
 import CartComponent from '../CartComponent';
+import './SalesComponent.less';
 
 class SalesComponent extends React.Component {
   render() {
     return (
-      <div>
+      <div className="grid">
         <div className="products-list">
           {
             this.props.products.map(product => (
