@@ -10,28 +10,61 @@ class Cart extends React.Component {
     const { items } = this.props.data;
     const { removeFromCart } = this.props.actions;
     const cartItems = this.props.data.items.map((item, i) => (
-      <div className="cart-item" key={i}>
-        {item.title}
-        <button
-          className="btn btn-success"
-          onClick={removeFromCart.bind(null, i)}>Remove
-        </button>
-      </div>
+      <li className="cart-item" key={i}>
+        <span className="cart-item-quantity">
+          1
+        </span>
+        <span className="cart-item-title">
+          {item.title}
+        </span>
+        <span className="cart-item-price">
+          {Number(item.price).toFixed(2)}
+        </span>
+        <span
+          className="fa fa-trash"
+          onClick={removeFromCart.bind(null, i)} />
+      </li>
     ));
 
-    const totalPrice = items.reduce((s, x) => s + x.price, 0);
+    const subTotal = items.reduce((s, x) => s + x.price, 0);
+    const discount = 0;
+    const tax = 0;
+    const totalPrice = (subTotal - discount) + tax;
 
     return (
       <div className="cart">
         <div className="cart-items-list">
-          {cartItems}
+          <ul>
+            {cartItems}
+          </ul>
           <div className="cart-calculations">
-            total: {totalPrice}
+            <div className="sale-note">
+              <textarea placeholder="Add sale note"/>
+            </div>
+            <hr />
+            <div className="cart-calculation-item">
+              <span className="">Sub-total</span>
+              <span className="pull-right">{Number(subTotal).toFixed(2)}</span>
+            </div>
+            <div className="cart-calculation-item">
+              <span className="">Discount</span>
+              <span className="pull-right">{Number(discount).toFixed(2)}</span>
+            </div>
+            <div className="cart-calculation-item">
+              <span className="">Tax</span>
+              <span className="pull-right">{Number(tax).toFixed(2)}</span>
+            </div>
+            <hr />
+            <div className="cart-calculation-item">
+              <span className="">Total ({cartItems.length} items)</span>
+              <span className="pull-right">{Number(totalPrice).toFixed(2)}</span>
+            </div>
           </div>
         </div>
         <div className="cart-actions">
-          <button className="btn btn-success btn-wide" disabled={items.length === 0}>
-            Pay {totalPrice}
+          <button className="btn btn-success btn-wide text-left" disabled={items.length === 0}>
+            <span className="">Pay</span>
+            <span className="pull-right">{Number(totalPrice).toFixed(2)}</span>
           </button>
         </div>
       </div>
