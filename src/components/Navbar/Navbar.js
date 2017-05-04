@@ -12,8 +12,11 @@ class NavbarComponent extends React.Component {
 
     return (
       <nav className="sidebar-nav">
-        <Link to="/sell" className="nav-item">Sell</Link>
-        <Link to="/login" className="nav-item">Logout</Link>
+        <Link to="/sell" className="nav-item logo" />
+        <Link to="/sell" className="nav-item material-icons">shopping_cart</Link>
+        <Link to="/settings" className="nav-item material-icons">settings</Link>
+        <Link to="/logout" className="nav-item material-icons">lock</Link>
+        <Link to="/about" className="nav-item material-icons">info</Link>
       </nav>
     );
   }
