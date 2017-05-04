@@ -26,6 +26,16 @@ export const parkOrder = () => ({
   type: 'PARK_ORDER'
 });
 
+export const searchProducts = e => ({
+  type: 'SEARCH_PRODUCTS',
+  term: e.target.value
+});
+
+export const clearSearch = () => ({
+  type: 'SEARCH_PRODUCTS',
+  term: ''
+});
+
 export const fetchProducts = () => ({
   type: 'FETCH_PRODUCTS_SUCCESS',
   products: [{

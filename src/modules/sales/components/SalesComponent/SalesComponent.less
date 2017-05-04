@@ -23,6 +23,7 @@
   padding: 20px;
   background: url(images/pattern_grayscale.png);
   height: 100%;
+  overflow: auto;
 }
 
 .products {
@@ -71,18 +72,21 @@
     width: 100%;
     color: #2f3f7c;
     font-size: 1em;
+  }
+}
 
-    // &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-    //   color: pink;
-    // }
-    // &::-moz-placeholder { /* Firefox 19+ */
-    //   color: pink;
-    // }
-    // &:-ms-input-placeholder { /* IE 10+ */
-    //   color: pink;
-    // }
-    // &:-moz-placeholder { /* Firefox 18- */
-    //   color: pink;
-    // }
+.searchbar-results {
+  background: white;
+  border: 1px solid #e5e5e5;
+  border-top: none;
+}
+
+.searchbar-results-item {
+  padding: 8px 10px;
+  border-bottom: 1px solid #e5e5e5;
+  cursor: pointer;
+
+  &:hover {
+    background: #efefef;
   }
 }

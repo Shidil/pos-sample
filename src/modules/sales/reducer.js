@@ -7,7 +7,8 @@ let getInitialState = () => {
       discount: 0,
       saleNote: ''
     },
-    cash: 0
+    cash: 0,
+    searchTerm: ''
   };
 };
 
@@ -90,6 +91,12 @@ export default (state = getInitialState(), action) => {
         ...state.cart,
         saleNote: action.note
       }
+    };
+
+  case 'SEARCH_PRODUCTS':
+    return {
+      ...state,
+      searchTerm: action.term
     };
 
   default:
