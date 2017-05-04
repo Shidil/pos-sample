@@ -27,7 +27,7 @@ class SalesComponent extends React.Component {
             }
           </div>
         </div>
-        <CartComponent data={this.props.cart} />
+        <CartComponent />
       </div>
     );
   }

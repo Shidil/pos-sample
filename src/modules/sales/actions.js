@@ -9,6 +9,10 @@ export const removeFromCart = (product) => ({
   product
 });
 
+export const resetCart = () => ({
+  type: 'RESET_CART'
+});
+
 export const fetchProducts = () => ({
   type: 'FETCH_PRODUCTS_SUCCESS',
   products: [{

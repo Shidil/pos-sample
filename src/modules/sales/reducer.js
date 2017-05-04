@@ -4,7 +4,8 @@ let getInitialState = () => {
     orders: [],
     cart: {
       items: [],
-      discount: 0
+      discount: 0,
+      saleNote: ''
     },
     cash: 0
   };
@@ -38,6 +39,17 @@ export default (state = getInitialState(), action) => {
         items: [...items]
       }
     };
+
+  case 'RESET_CART':
+    return {
+      ...state,
+      cart: {
+        ...state.cart,
+        items: [],
+        saleNote: ''
+      }
+    };
+
   default:
     return state;
   }
