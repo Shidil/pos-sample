@@ -6,7 +6,7 @@ import './Navbar.less';
 
 class NavbarComponent extends React.Component {
   render() {
-    if (this.props.location === '/login') {
+    if (!this.props.isLoggedIn) {
       return null;
     }
 
@@ -20,16 +20,12 @@ class NavbarComponent extends React.Component {
 }
 
 NavbarComponent.propTypes = {
-  location: PropTypes.string.isRequired
+  isLoggedIn: PropTypes.bool.isRequired
 };
 
 const mapStateToProps = state => {
-  const location = state.routing.locationBeforeTransitions;
-  const pathname = location ? location.pathname : '/login';
-
   return {
-    location: pathname,
-    redirectUrl: state.session.redirectUrl
+    isLoggedIn: state.session.loggedIn
   };
 };
 
