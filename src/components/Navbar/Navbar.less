@@ -1,15 +1,74 @@
-.sidebar-nav {
-  float: left;
-  width: 74px;
-  height: 100vh;
+@xs-min: 480px;
+@sm-min: 768px;
+@md-min: 992px;
+@lg-min: 1200px;
 
+@xs-max: (@sm-min - 1);
+@sm-max: (@md-min - 1);
+@md-max: (@lg-min - 1);
+
+@phone:          ~"only screen and (min-width: @{xs-min})";
+@phone-strict:   ~"only screen and (min-width: @{xs-min}) and (max-width: @{xs-max})";
+@tablet:         ~"only screen and (min-width: @{sm-min})";
+@tablet-strict:  ~"only screen and (min-width: @{sm-min}) and (max-width: @{sm-max})";
+@desktop:        ~"only screen and (min-width: @{md-min})";
+@desktop-strict: ~"only screen and (min-width: @{md-min}) and (max-width: @{md-max})";
+@large:          ~"only screen and (min-width: @{lg-min})";
+
+.navbar {
+
+}
+
+.navbar-sidebar-desktop {
+  text-align: center;
+  padding: 0;
   background: #2f3f7c;
+  width: 74px;
   background: -moz-linear-gradient(-45deg,#2f3f7c 0%,#9c27b0 100%);
   background: -webkit-linear-gradient(-45deg,#2f3f7c 0%,#9c27b0 100%);
   background: linear-gradient(135deg,#2f3f7c 0%,#9c27b0 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#2F3F7C',endColorstr='#9C27B0',GradientType=1);
+}
 
-  overflow: hidden;
+.navbar-sidebar {
+  float: left;
+  height: 100vh;
+  width: 200px;
+  background: #222d59;
+  text-align: left;
+
+  @media @desktop {
+    .navbar-sidebar-desktop;
+  }
+
+  @media @tablet {
+    .navbar-sidebar-desktop;
+  }
+}
+
+.navbar-header {
+  background: #2f3f7c;
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 15px 10px;
+  color: white;
+
+  @media @desktop {
+    display: none;
+  }
+
+  @media @tablet {
+    display: none;
+  }
+
+  button, a {
+    -webkit-appearance: none;
+    background: none;
+    border: none;
+    color: white;
+    text-decoration: none;
+  }
 }
 
 .nav-item {
@@ -17,8 +76,8 @@
   color: white;
   text-decoration: none;
   width: 100%;
-  padding: 20px 0px;
-  text-align: center;
+  padding: 15px 5px 15px 25px;
+  text-align: left;
 
   &.active {
     background: white;
@@ -26,8 +85,50 @@
   }
 
   &:hover {
-    background: white;
-    color: #444;
+    background: darken(#222d59, 10%);
+    color: white;
+
+    @media @desktop {
+      background: white;
+      color: #444;
+    }
+
+    @media @tablet {
+      background: white;
+      color: #444;
+    }
+  }
+
+  .nav-item-title {
+    @media @desktop {
+      display: none;
+    }
+
+    @media @tablet {
+      display: none;
+    }
+  }
+
+  i {
+    display: none;
+
+    @media @desktop {
+      display: block;
+    }
+
+    @media @tablet {
+      display: block;
+    }
+  }
+
+  @media @desktop {
+    text-align: center;
+    padding: 20px 0px;
+  }
+
+  @media @tablet {
+    text-align: center;
+    padding: 20px 0px;
   }
 }
 
@@ -39,4 +140,14 @@
   height: 74px;
   width: 74px;
   margin: 0;
+
+  display: none;
+
+  @media @desktop {
+    display: block;
+  }
+
+  @media @tablet {
+    display: block;
+  }
 }
