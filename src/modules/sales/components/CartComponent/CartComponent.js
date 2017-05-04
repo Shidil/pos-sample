@@ -7,29 +7,32 @@ import './CartComponent.less';
 
 class Cart extends React.Component {
   render() {
+    const { items } = this.props.data;
     const { removeFromCart } = this.props.actions;
-    const items = this.props.data.items.map((item, i) => (
+    const cartItems = this.props.data.items.map((item, i) => (
       <div className="cart-item" key={i}>
         {item.title}
         <button
           className="btn btn-success"
-          onClick={removeFromCart.bind(null, item)}>Remove
+          onClick={removeFromCart.bind(null, i)}>Remove
         </button>
       </div>
     ));
 
-    const totalPrice = this.props.data.items.reduce((s, x) => s + x.price, 0);
+    const totalPrice = items.reduce((s, x) => s + x.price, 0);
 
     return (
       <div className="cart">
         <div className="cart-items-list">
-          {items}
+          {cartItems}
           <div className="cart-calculations">
             total: {totalPrice}
           </div>
         </div>
         <div className="cart-actions">
-          <button className="btn btn-success btn-wide">Checkout</button>
+          <button className="btn btn-success btn-wide" disabled={items.length === 0}>
+            Pay {totalPrice}
+          </button>
         </div>
       </div>
     );
