@@ -5,6 +5,10 @@ import CartComponent from '../CartComponent';
 import './SalesComponent.less';
 
 class SalesComponent extends React.Component {
+  componentWillMount() {
+    this.props.actions.fetchProducts();
+  }
+
   render() {
     return (
       <div className="grid">

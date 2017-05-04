@@ -2,45 +2,7 @@ import { remove } from 'lodash';
 
 let getInitialState = () => {
   return {
-    products: [{
-      title: 'Chicken Biriyani',
-      id: 1,
-      price: 200
-    }, {
-      title: 'Beef Biriyani',
-      id: 2,
-      price: 150
-    },
-    {
-      title: 'Mutton Biriyani',
-      id: 3,
-      price: 300
-    },
-    {
-      title: 'Fish Biriyani',
-      id: 4,
-      price: 250
-    },
-    {
-      title: 'Prawns Biriyani',
-      id: 5,
-      price: 200
-    },
-    {
-      title: 'Mussels Biriyani',
-      id: 6,
-      price: 220
-    },
-    {
-      title: 'Mixed Biriyani',
-      id: 7,
-      price: 250
-    },
-    {
-      title: 'Kappa Biriyani',
-      id: 8,
-      price: 100
-    }],
+    products: [],
     orders: [],
     cart: {
       items: [],
@@ -52,6 +14,12 @@ let getInitialState = () => {
 
 export default (state = getInitialState(), action) => {
   switch (action.type) {
+  case 'FETCH_PRODUCTS_SUCCESS':
+    return {
+      ...state,
+      products: [...action.products]
+    };
+
   case 'ADD_PRODUCT_TO_CART':
     return {
       ...state,
@@ -63,9 +31,7 @@ export default (state = getInitialState(), action) => {
 
   case 'REMOVE_ITEM':
     let items = [...state.cart.items];
-    remove(items, {
-      id: action.product.id
-    });
+    items.splice(action.product, 1);
 
     return {
       ...state,
