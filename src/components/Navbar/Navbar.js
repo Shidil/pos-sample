@@ -30,13 +30,17 @@ class NavbarComponent extends React.Component {
       <div>
         <header className="navbar-header">
           <button className="fa fa-bars pull-left" onClick={this.showMenu}/>
-          <Link to="/sell" className="header-logo">Till</Link>
+          <Link to="/sell/new" className="header-logo">Till</Link>
         </header>
         <nav className={sidebarClassList}>
-          <Link to="/sell" className="nav-item logo" />
-          <Link to="/sell" className="nav-item">
+          <Link to="/sell/new" className="nav-item logo" />
+          <Link to="/sell/new" className="nav-item">
             <i className="material-icons">shopping_cart</i>
             <span className="nav-item-title">Sell</span>
+          </Link>
+          <Link to="/sell/orders" className="nav-item">
+            <i className="material-icons">assessment</i>
+            <span className="nav-item-title">Orders</span>
           </Link>
           <Link to="/settings" className="nav-item">
             <i className="material-icons">settings</i>

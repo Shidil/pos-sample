@@ -1,9 +1,26 @@
+import React from 'react';
+import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as actionCreators from './actions';
 import SalesComponent from './components/SalesComponent';
+import OrdersComponent from './components/OrdersComponent';
 
-let mapStateToProps = (state) => {
+class SalesContainer extends React.Component {
+  render() {
+    return (
+      <div className="content">
+        {this.props.children}
+      </div>
+    );
+  }
+}
+
+SalesContainer.propTypes = {
+  children: PropTypes.object.isRequired
+};
+
+let mapStateToPropsForSales = (state) => {
   return {
     products: state.sales.products,
     cart: state.sales.cart,
@@ -11,13 +28,24 @@ let mapStateToProps = (state) => {
   };
 };
 
+let mapStateToPropsForOrders = (state) => {
+  return {
+    orders: state.sales.orders
+  };
+};
+
 const mapDispatchToProps = dispatch => ({
   actions: bindActionCreators(actionCreators, dispatch)
 });
 
-const SalesContainer = connect(
-  mapStateToProps,
+const NewSalesContainer = connect(
+  mapStateToPropsForSales,
   mapDispatchToProps
 )(SalesComponent);
 
-export default SalesContainer;
+const OrdersContainer = connect(
+  mapStateToPropsForOrders,
+  mapDispatchToProps
+)(OrdersComponent);
+
+export { SalesContainer, NewSalesContainer, OrdersContainer};
