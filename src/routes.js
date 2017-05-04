@@ -13,6 +13,7 @@ const routes = (
   <Route path="/" component={AppContainer}>
     <IndexRoute component={LoginContainer} />
     <Route path="login" component={LoginContainer} />
+    <Route path="logout" component={LoginContainer} />
     <Route component={AuthGuard}>
       <Route path="sell" component={SalesContainer} />
     </Route>
