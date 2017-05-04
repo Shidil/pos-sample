@@ -1,4 +1,5 @@
 @import '../../node_modules/normalize.css/normalize.css';
+@import '../../node_modules/font-awesome/less/font-awesome.less';
 @import './fonts/open-sans.less';
 
 * {
@@ -12,6 +13,9 @@ html {
 body {
   font-size: 1em;
   font-family: 'Open Sans', sans-serif;
+  background-color: #f2f2f2;
+  -webkit-font-smoothing: antialiased;
+  color: #333;
 }
 
 .centered-xy {
@@ -51,4 +55,22 @@ body {
     background: #ccc;
     color: #777;
   }
+}
+
+.pull-left {
+  float: left!important;
+}
+
+.pull-right {
+  float: right!important;
+}
+
+.text-left {
+  text-align: left!important;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
