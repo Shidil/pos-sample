@@ -12,13 +12,20 @@ class SalesComponent extends React.Component {
   render() {
     return (
       <div className="grid">
-        <div className="products-list">
-          {
-            this.props.products.map(product => (
-              <ProductComponent data={product} key={product.id}
-                addToCart={this.props.actions.addProductToCart} />
-            ))
-          }
+        <div className="products">
+          <div className="searchbar">
+            <input id="input-search" type="text"
+              className="form-control"
+              placeholder="Search Products..." />
+          </div>
+          <div className="products-list">
+            {
+              this.props.products.map(product => (
+                <ProductComponent data={product} key={product.id}
+                  addToCart={this.props.actions.addProductToCart} />
+              ))
+            }
+          </div>
         </div>
         <CartComponent data={this.props.cart} />
       </div>
