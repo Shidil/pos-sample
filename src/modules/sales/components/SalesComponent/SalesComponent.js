@@ -8,7 +8,8 @@ class SalesComponent extends React.Component {
       <div>
         {
           this.props.products.map(product => (
-            <ProductComponent data={product} key={product.id} />
+            <ProductComponent data={product} key={product.id}
+              addToCart={this.props.actions.addProductToCart} />
           ))
         }
       </div>
@@ -17,7 +18,8 @@ class SalesComponent extends React.Component {
 }
 
 SalesComponent.propTypes = {
-  products: PropTypes.array
+  products: PropTypes.array,
+  actions: PropTypes.object.isRequired
 };
 
 SalesComponent.defaultProps = {

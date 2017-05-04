@@ -1,19 +1,4 @@
-/**
- * Increment action
- * @return {Object} plain action object
- */
-export function increment() {
-  return {
-    type: 'INCREMENT'
-  };
-}
-
-/**
- * Decrement action
- * @return {Object} plain action object
- */
-export function decrement() {
-  return {
-    type: 'DECREMENT'
-  };
-}
+export const addProductToCart = (product) => ({
+  type: 'ADD_PRODUCT_TO_CART',
+  product
+});
