@@ -1,5 +1,3 @@
-import { remove } from 'lodash';
-
 let getInitialState = () => {
   return {
     products: [],
