@@ -1,3 +1,6 @@
+@desktop:   ~"only screen and (min-width: 960px) and (max-width: 1199px)";
+@tablet:    ~"only screen and (min-width: 720px) and (max-width: 959px)";
+
 .cart {
   width: 500px;
   box-shadow: 0px 0px 3px #ccc;
@@ -5,9 +8,17 @@
   font-size: 1em;
 }
 
+.grid-header-action  {
+  vertical-align: middle;
+  font-size: 1.2em;
+  margin: 0;
+  padding-left: 15px;
+}
+
 .cart-items-list {
-  max-height: 500px;
+  max-height: 50vh;
   overflow: auto;
+  margin-top: 20px;
 }
 
 .cart-item {
@@ -28,7 +39,7 @@
   .cart-item-title {
     flex-basis: 55%;
     text-indent: 5px;
-    font-weight: bold;
+    font-weight: 500;
     font-size: 1em;
   }
 
@@ -41,6 +52,7 @@
     flex-basis: 10%;
     font-size: 1em;
     text-align: center;
+    cursor: pointer;
   }
 }
 

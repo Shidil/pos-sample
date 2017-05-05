@@ -2,9 +2,20 @@
 @import '../../node_modules/bootstrap/less/bootstrap.less';
 @import '../../node_modules/font-awesome/less/font-awesome.less';
 @import './fonts/open-sans.less';
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
 
 * {
   box-sizing: border-box;
+}
+
+@viewport{
+    zoom: 1.0;
+    width: extend-to-zoom;
+}
+
+@-ms-viewport{
+    width: extend-to-zoom;
+    zoom: 1.0;
 }
 
 html {
@@ -13,7 +24,7 @@ html {
 
 body {
   font-size: 1em;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Roboto', sans-serif;
   background-color: #f2f2f2;
   -webkit-font-smoothing: antialiased;
   color: #333;
@@ -77,4 +88,20 @@ ul {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+.grid-header {
+  background: #2f3f7c;
+  color: white;
+  padding: 20px;
+  text-align: left;
+}
+
+.grid-header-action  {
+  margin: 0px 5px;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
 }

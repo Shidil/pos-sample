@@ -4,11 +4,22 @@ let getInitialState = () => {
     orders: [],
     cart: {
       items: [],
-      discount: 0
+      discount: 0,
+      saleNote: ''
     },
-    cash: 0
+    cash: 0,
+    searchTerm: ''
   };
 };
+
+let buildOrder = (cart, status = 'discarded') => ({
+  id: Math.random() * 100 + Math.random() * 50,
+  items: cart.items,
+  saleNote: cart.saleNote,
+  price: cart.items.reduce((s, x) => s + x.price, 0),
+  date: new Date().toLocaleString(),
+  status: status
+});
 
 export default (state = getInitialState(), action) => {
   switch (action.type) {
@@ -38,6 +49,56 @@ export default (state = getInitialState(), action) => {
         items: [...items]
       }
     };
+
+  case 'RESET_CART':
+    return {
+      ...state,
+      cart: {
+        ...state.cart,
+        items: [],
+        saleNote: ''
+      },
+      orders: state.cart.items.length ?
+        [...state.orders, buildOrder(state.cart, 'discarded')] : state.orders
+    };
+
+  case 'POST_ORDER':
+    return {
+      ...state,
+      cart: {
+        ...state.cart,
+        items: [],
+        saleNote: ''
+      },
+      orders: [...state.orders, buildOrder(state.cart, 'completed')]
+    };
+
+  case 'PARK_ORDER':
+    return {
+      ...state,
+      cart: {
+        ...state.cart,
+        items: [],
+        saleNote: ''
+      },
+      orders: [...state.orders, buildOrder(state.cart, 'parked')]
+    };
+
+  case 'CHANGE_SALES_NOTE':
+    return {
+      ...state,
+      cart: {
+        ...state.cart,
+        saleNote: action.note
+      }
+    };
+
+  case 'SEARCH_PRODUCTS':
+    return {
+      ...state,
+      searchTerm: action.term
+    };
+
   default:
     return state;
   }

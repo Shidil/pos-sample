@@ -6,6 +6,7 @@ import AppContainer from './components/AppContainer/';
 import AuthGuard from './components/AuthGuard/';
 import LoginContainer from './modules/login/login';
 import SalesContainer from './modules/sales';
+import { NewSalesContainer, OrdersContainer } from './modules/sales';
 import NotFound from './components/NotFound/';
 import DevTools from './store/DevTools';
 
@@ -15,7 +16,10 @@ const routes = (
     <Route path="login" component={LoginContainer} />
     <Route path="logout" component={LoginContainer} />
     <Route component={AuthGuard}>
-      <Route path="sell" component={SalesContainer} />
+      <Route path="sell" component={SalesContainer}>
+        <Route path="new" component={NewSalesContainer} />
+        <Route path="orders" component={OrdersContainer} />
+      </Route>
     </Route>
     <Route path="*" component={NotFound} />
   </Route>

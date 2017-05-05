@@ -8,7 +8,10 @@ import './CartComponent.less';
 class Cart extends React.Component {
   render() {
     const { items } = this.props.data;
-    const { removeFromCart } = this.props.actions;
+    const { removeFromCart,
+            resetCart, changeSalesNote, parkOrder,
+            postOrder } = this.props.actions;
+
     const cartItems = this.props.data.items.map((item, i) => (
       <li className="cart-item" key={i}>
         <span className="cart-item-quantity">
@@ -33,13 +36,22 @@ class Cart extends React.Component {
 
     return (
       <div className="cart">
+        <div className="grid-header">
+          <span className="">Shopping Cart</span>
+          <span className="grid-header-action fa fa-trash-o pull-right"
+            onClick={resetCart}
+          />
+          <span className="grid-header-action fa fa-clock-o pull-right"
+            onClick={parkOrder}
+          />
+        </div>
         <div className="cart-items-list">
           <ul>
             {cartItems}
           </ul>
           <div className="cart-calculations">
             <div className="sale-note">
-              <textarea placeholder="Add sale note"/>
+              <textarea placeholder="Add sale note" onBlur={changeSalesNote}/>
             </div>
             <hr />
             <div className="cart-calculation-item">
@@ -62,7 +74,9 @@ class Cart extends React.Component {
           </div>
         </div>
         <div className="cart-actions">
-          <button className="btn btn-success btn-wide text-left" disabled={items.length === 0}>
+          <button className="btn btn-success btn-wide text-left"
+            disabled={items.length === 0}
+            onClick={postOrder}>
             <span className="">Pay</span>
             <span className="pull-right">{Number(totalPrice).toFixed(2)}</span>
           </button>
@@ -80,7 +94,7 @@ Cart.propTypes = {
 let mapStateToProps = (state) => {
   return {
     products: state.sales.products,
-    cart: state.sales.cart
+    data: state.sales.cart
   };
 };
 

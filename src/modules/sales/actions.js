@@ -9,6 +9,33 @@ export const removeFromCart = (product) => ({
   product
 });
 
+export const resetCart = () => ({
+  type: 'RESET_CART'
+});
+
+export const changeSalesNote = (e) => ({
+  type: 'CHANGE_SALES_NOTE',
+  note: e.target.value
+});
+
+export const postOrder = () => ({
+  type: 'POST_ORDER'
+});
+
+export const parkOrder = () => ({
+  type: 'PARK_ORDER'
+});
+
+export const searchProducts = e => ({
+  type: 'SEARCH_PRODUCTS',
+  term: e.target.value
+});
+
+export const clearSearch = () => ({
+  type: 'SEARCH_PRODUCTS',
+  term: ''
+});
+
 export const fetchProducts = () => ({
   type: 'FETCH_PRODUCTS_SUCCESS',
   products: [{
