@@ -11,6 +11,7 @@ class Cart extends React.Component {
     const { removeFromCart,
             resetCart, changeSalesNote, parkOrder,
             postOrder } = this.props.actions;
+
     const cartItems = this.props.data.items.map((item, i) => (
       <li className="cart-item" key={i}>
         <span className="cart-item-quantity">

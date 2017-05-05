@@ -26,67 +26,47 @@
   overflow: auto;
 }
 
-.products {
+.orders {
   flex: 1 auto;
   flex-basis: 100%;
-  margin-bottom: 10px;
-
-  @media @desktop {
-    flex-basis: 55%;
-    margin-right: 20px;
-  }
+  padding: 10px;
 }
 
-.products-list {
-  display: none;
-
-  @media @desktop {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin-top: 15px;
-  }
-}
-
-.cart {
-  flex: 1 auto;
-  flex-basis: 100%;
+.orders-list {
+  border: 1px solid #eee;
   background: white;
-
-  @media @desktop {
-    flex-basis: 40%;
-  }
 }
 
-.searchbar {
-  height: 60px;
+.order-item-header {
   color: #2f3f7c;
-  border: 1px solid #e5e5e5;
-  background: white;
+  font-size: 1em;
+}
 
-  .form-control {
-    border: none;
-    background: none;
-    box-shadow: none;
-    height: 100%;
-    width: 100%;
-    color: #2f3f7c;
-    font-size: 1em;
+.order-item {
+  width: 100%;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+
+  .order-item-quantity {
+    flex-basis: 5%;
+    text-align: center;
   }
-}
 
-.searchbar-results {
-  background: white;
-  border: 1px solid #e5e5e5;
-  border-top: none;
-}
+  .order-item-date {
+    flex-basis: 25%;
+  }
 
-.searchbar-results-item {
-  padding: 8px 10px;
-  border-bottom: 1px solid #e5e5e5;
-  cursor: pointer;
+  .order-item-price {
+    flex-basis: 10%;
+  }
 
-  &:hover {
-    background: #efefef;
+  .order-item-note {
+    flex-basis: 35%;
+  }
+
+  .order-item-status {
+    flex-basis: 25%;
   }
 }
